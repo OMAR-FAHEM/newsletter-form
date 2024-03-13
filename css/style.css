@@ -1,0 +1,152 @@
+:root {
+  --primary-color: hsl(234, 29%, 20%);
+  --Tomato: hsl(4, 100%, 67%);
+  --Charcoal-Grey: hsl(235, 18%, 26%);
+  --Grey: hsl(231, 7%, 60%);
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--primary-color);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+}
+.image {
+  flex-basis: 40%;
+}
+.form {
+  flex-basis: 40%;
+  padding: 20px;
+}
+.form h1 {
+  color: var(--primary-color);
+  margin: 20px 0;
+  font-size: 40px;
+}
+h1 + p {
+  margin: 10px 0;
+}
+.form li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.form i {
+  margin-right: 15px;
+  color: var(--Tomato);
+}
+form {
+  position: relative;
+}
+form label {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+input:focus {
+  outline: none;
+}
+form input {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--Grey);
+}
+form input[type="submit"] {
+  background-color: var(--Charcoal-Grey);
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+form input[type="submit"]:active,
+form input[type="submit"]:hover {
+  background-image: linear-gradient(270deg, rgb(254 82 122), rgb(255 99 76));
+}
+
+.error-msg {
+  position: absolute;
+  top: 25px;
+  font-size: 14px;
+  color: red;
+  right: 0;
+}
+.not-valid {
+  background-color: rgba(255, 0, 0, 0.3);
+  border-color: rgba(255, 0, 0, 0.6);
+}
+.success-modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--Charcoal-Grey);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.visible {
+  display: flex;
+}
+
+.success-modal .box {
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+}
+.success-modal h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  position: relative;
+}
+.success-modal h2::before {
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 800;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  font-size: 40px;
+  color: var(--Tomato);
+}
+.success-modal p.confirm {
+  font-weight: 400;
+}
+.success-modal p.confirm span {
+  color: var(--Charcoal-Grey);
+  font-weight: 800;
+}
+.success-modal button.close-modal {
+  margin: 20px 0 0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--Charcoal-Grey);
+  color: white;
+  width: 100%;
+}
+.success-modal button.close-modal:active {
+  background-image: linear-gradient(270deg, rgb(254 82 122), rgb(255 99 76));
+}
